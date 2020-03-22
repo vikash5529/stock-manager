@@ -50,6 +50,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "stock-manager",
               "budgets": [
                 {
                   "type": "initial",
@@ -124,6 +125,10 @@
               "devServerTarget": "stock-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
