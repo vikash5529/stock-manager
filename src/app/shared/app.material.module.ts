@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   exports: [
@@ -43,7 +44,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatChipsModule
   ]
 })
 export class AppMaterialModule {}
