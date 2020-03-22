@@ -1,0 +1,9 @@
+.theme-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  div,
+  h1 {
+    width: 33.33%;
+  }
+}

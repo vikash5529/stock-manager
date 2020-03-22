@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <app-data-table
+    *ngIf="dataSource?.length >= 8"
+    [tableDataSource]="dataSource"
+    [columnsToRender]="columnsToDisplay"
+  ></app-data-table>
+</div>
+<div *ngIf="dataSource?.length <= 8" class="spinner">
+  <mat-spinner color="accent"></mat-spinner>
+</div>

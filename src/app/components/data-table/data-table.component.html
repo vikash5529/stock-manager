@@ -1,0 +1,38 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [trackBy]="trackById">
+  <ng-container matColumnDef="ticker">
+    <th mat-header-cell *matHeaderCellDef>Ticker</th>
+    <td mat-cell *matCellDef="let data">
+      {{ data?.name | titlecase }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let data">
+      <mat-chip-list>
+        <mat-chip mat-raised-button style="cursor: pointer;" (click)="openSheet(data)" [ngClass]="'chip-style-' + data.className"
+          >{{ data.price }}
+        </mat-chip>
+      </mat-chip-list>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="updatedAt">
+    <th mat-header-cell *matHeaderCellDef>Last Updated</th>
+    <td mat-cell *matCellDef="let data">
+      {{ data?.updatedAt }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="percentageChange">
+    <th mat-header-cell *matHeaderCellDef>Change</th>
+    <td mat-cell *matCellDef="let data">
+      <ng-container *ngIf="data?.percentageChange; else elseBlock">
+        <mat-icon *ngIf="data?.className === 'rising'" style="color:green">trending_up</mat-icon>
+        <mat-icon *ngIf="data?.className === 'falling'" style="color:red">trending_down</mat-icon>
+        {{ data?.percentageChange }}%
+      </ng-container>
+      <ng-template #elseBlock>--</ng-template>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToRender; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToRender"></tr>
+</table>

@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  overflow: scroll;
+  height: 87.5;
+}
+[class*='chip-style-'] {
+  justify-content: center;
+  width: 60px;
+  border: 1px solid black;
+}
+.chip-style-rising {
+  background: green;
+}
+.chip-style-falling {
+  background: red;
+}
+.chip-style-stagnant {
+  background: white;
+  color: black;
+}
+
+[class*='mat-column-'] {
+  width: 25vw;
+}
+
+.percentage-cell {
+  border: 1px solid rgb(80, 80, 168);
+  border-radius: 15px;
+  width: 120px;
+  text-align: center;
+}

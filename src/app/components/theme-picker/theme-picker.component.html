@@ -1,0 +1,7 @@
+<div class="toggle-wrapper">
+    <mat-icon [color]="isThemeLight ? 'warn' : ''">wb_sunny </mat-icon>
+    <mat-slide-toggle matTooltip="Switch Theme" (change)="toggleTheme($event)"> </mat-slide-toggle>
+    <mat-icon [ngStyle]="isThemeDark ? { color: 'blue' } : ''"
+        >nights_stay
+    </mat-icon>
+</div>
